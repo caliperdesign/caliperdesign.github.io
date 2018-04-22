@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Agency - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/agency.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Caliper.Design</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+            </li>
+            <!-- 
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+            </li>
+          -->
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Call +91 9009 6666 74</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+          <div class="intro-heading">Welcome To</div>
+          <div class="intro-heading">Caliper.Design</div>
+          <div class="intro-lead-in">Power of Precision</div>
+          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" style="color:black;" href="#services">Call +91 9009 6666 74</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Services -->
+    <div w3-include-html="services.html"></div>
+
+    <!-- Portfolio Grid -->
+    <div w3-include-html="portfolio.html"></div>
+
+    <!-- About -->
+    <!-- <div w3-include-html="about.html"></div> -->
+
+    <!-- Team -->
+    <!-- <div w3-include-html="team.html"></div> -->
+
+    <!-- Clients -->
+    <!-- <div w3-include-html="clients.html"></div> -->
+
+    <!-- Contact -->
+    <!-- <div w3-include-html="contact.html"></div> -->
+
+    <!-- Footer -->
+    <!-- <div w3-include-html="footer.html"></div> -->
+
+    <!-- Portfolio Modals -->
+    <div w3-include-html="models.html"></div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.min.js"></script>
+
+
+    <script>
+      function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("w3-include-html");
+          if (file) {
+            /*make an HTTP request using the attribute value as the file name:*/
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /*remove the attribute, and call this function once more:*/
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+              }
+            } 
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /*exit the function:*/
+            return;
+          }
+        }
+      }
+      </script>
+
+    <script>
+    includeHTML();
+    </script>
+    
+  </body>
+
+</html>
